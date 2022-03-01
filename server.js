@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const feelings = require('./data/feelings.js')
 const actions = require('./data/actions.js')
+const log = require('./data/log.js')
 require('dotenv').config()
 
 app.use(express.json())
@@ -11,7 +12,8 @@ app.set('port', process.env.PORT || 3001)
 app.locals = {
   title: 'Let\'s Chill',
   feelings,
-  actions
+  actions,
+  log
 }
 
 app.get('/', (request, response) => {
@@ -53,6 +55,12 @@ app.get('/api/v1/actions/:id', (request, response) => {
   }
 
   response.status(200).json(action)
+})
+
+app.get('/api/v1/log', (request, response) => {
+  const log = app.locals.log
+
+  response.status(200).json(log)
 })
 
 app.listen(app.get('port'), () => {
