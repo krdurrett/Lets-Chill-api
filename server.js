@@ -63,6 +63,49 @@ app.get('/api/v1/log', (request, response) => {
   response.status(200).json(log)
 })
 
+app.post('/api/v1/log', (request, response) => {
+  const id = Date.now()
+  const entry = request.body
+ 
+  for (let requiredParameter of ['date', 'feeling', 'action']) {
+    if (!entry[requiredParameter]) {
+      response
+        .status(422)
+        .send({ error: `Expected format: { date: <String>, feeling: <String>, action: <String>}. You're missing a "${requiredParameter}" property`})
+    }
+  }
+
+  const { date, feeling, action, helped } = entry
+
+  if (typeof date !== 'string') {
+    return res.status(422).json({
+      message: `Invalid date type. Must be a string`
+    })
+  }
+
+  if (typeof feeling !== 'string') {
+    return res.status(422).json({
+      message: `Invalid feeling type. Must be a string`
+    })
+  }
+
+  if (typeof action !== 'string') {
+    return res.status(422).json({
+      message: `Invalid action type. Must be a string`
+    })
+  }
+
+  if (typeof helped !== 'boolean') {
+    return res.status(422).json({
+      message: `Invalid helped type. Must be a boolean`
+    })
+  }
+
+  
+  app.locals.log.push({ id, date, feeling, action, helped })
+  response.status(201).json({ id, date, feeling, action, helped })
+})
+
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
 })
