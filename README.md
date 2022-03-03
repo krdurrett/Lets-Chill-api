@@ -26,12 +26,13 @@ This server was created to accompany the user interface of 'Lets Chill', a front
 
 | Description | URL         | Method      | Required Properties for Request | Sample Sucessful Response |
 | ----------- | ----------- | ----------- | ------------------------------- | ------------------------- |
-| Get All Feelings | `http://localhost:3001/api/v1/feelings` or `https://lets-chill-api.herokuapp.com/api/v1/feelings` | GET | none | array containing all feelings objects |    
-| Get Single Book | `http://localhost:3001/api/v1/books/:isbn` <br> *where isbn will be the isbn number of single book* | GET | none | array containing an object of single book info |
-| Get All Favorites | `http://localhost:3001/api/v1/favorites` | GET | none | array container all favorite book objects | 
-| Add New Favorite | `http://localhost:3001/api/v1/favorites` | POST | `{ "isbn": "9781250278210", "title": "ABANDONED IN DEATH", "description": "...", "amazon_link": "https://www.amazon.com/dp/125027821X?tag=NYTBSREV-20", "book_image": "https://storage.googleapis.com/du-prd/books/images/9781250278210.jpg", "author": "J.D. Robb"}` | `{ id: <id> in favorites table}` |
-| Delete Single Favorited Book | `http://localhost:3001/api/v1/favorites/:isbn` <br> *where isbn will be the isbn number of single book* | DELETE | none | `{ message: Book with isbn#<isbn> has been removed from favorites }` |
-| Edit Favorited Status | `http://localhost:3001/api/v1/books/:isbn` | PATCH | `{"isFavorited":"false" OR "true"}` | `{ "message": "Book with isbn#<isbn> isFavorited: "false" OR "true" }` |
+| Get All Feelings | `http://localhost:3001/api/v1/feelings` or `https://lets-chill-api.herokuapp.com/api/v1/feelings` | GET | none | array containing all feeling objects |    
+| Get Single Feeling | `http://localhost:3001/api/v1/feelings/:id` or `https://lets-chill-api.herokuapp.com/api/v1/feelings/:id` <br> *where id is the id of the feeling* | GET | none | object containing information on a single feeling |
+| Get All Actions | `http://localhost:3001/api/v1/actions` or `https://lets-chill-api.herokuapp.com/api/v1/actions` | GET | none | array containing all action objects | 
+| Get Single Action | `http://localhost:3001/api/v1/actions/:id` or `https://lets-chill-api.herokuapp.com/api/v1/actions/:id` <br> *where id is the id of the action* | GET | none | object containing information on a single action |
+| Get Log | `http://localhost:3001/api/v1/log` or `https://lets-chill-api.herokuapp.com/api/v1/log` | GET | none | array containing all log entries |
+| Add Entry to Log | `http://localhost:3001/api/v1/log` or `https://lets-chill-api.herokuapp.com/api/v1/log` | POST | `{ "date": "01/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true}` | `{ "id": 1646161483052, "date": "01/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true }` |
+
 
 ## Technologies Used
 
