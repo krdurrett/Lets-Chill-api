@@ -31,7 +31,7 @@ This server was created to accompany the user interface of 'Lets Chill', a front
 | Get All Actions | `http://localhost:3001/api/v1/actions` or `https://lets-chill-api.herokuapp.com/api/v1/actions` | GET | none | array containing all action objects | 
 | Get Single Action | `http://localhost:3001/api/v1/actions/:id` or `https://lets-chill-api.herokuapp.com/api/v1/actions/:id` <br> *where id is the id of the action* | GET | none | object containing information on a single action |
 | Get Log | `http://localhost:3001/api/v1/log` or `https://lets-chill-api.herokuapp.com/api/v1/log` | GET | none | array containing all log entries |
-| Add Entry to Log | `http://localhost:3001/api/v1/log` or `https://lets-chill-api.herokuapp.com/api/v1/log` | POST | `{ "date": "01/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true}` | `{ "id": 1646161483052, "date": "01/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true }` |
+| Add Entry to Log | `http://localhost:3001/api/v1/log` or `https://lets-chill-api.herokuapp.com/api/v1/log` | POST | `{ "date": "1/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true}` | `{ "id": 1646161483052, "date": "1/28/2022", "feeling": "Calm", "action": "Prioritize Sleep", "helped": true }` |
 
 
 ## Technologies Used
