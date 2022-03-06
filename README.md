@@ -2,6 +2,7 @@
 
 
 - Deployed API on Heroku [here](https://lets-chill-api.herokuapp.com/) <br>
+- Deployed UI on Heroku [here](https://lets-chill-ui.herokuapp.com/) <br>
 - Frontend Repo [here](https://github.com/krdurrett/Lets_Chill_ui) <br>
 - Project Spec [here](https://frontend.turing.edu/projects/module-3/showcase.html)
 
